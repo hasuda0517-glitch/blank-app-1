@@ -1,11 +1,11 @@
 import streamlit as st
 import random
-from supabase import create_client, Client
+from supabase import create_client
 
 # =========================
 # Supabase 接続
 # =========================
-supabase: Client = create_client(
+supabase = create_client(
     st.secrets["SUPABASE_URL"],
     st.secrets["SUPABASE_KEY"]
 )
@@ -13,7 +13,7 @@ supabase: Client = create_client(
 # =========================
 # 画面設定
 # =========================
-st.set_page_config(page_title="ルーレットアプリ", layout="centered")
+st.set_page_config(page_title="🎯 ルーレットアプリ", layout="centered")
 st.title("🎯 シンプルルーレットアプリ")
 
 st.write("カンマ（,）で区切って項目を入力してください")
@@ -21,10 +21,7 @@ st.write("カンマ（,）で区切って項目を入力してください")
 # =========================
 # 入力欄
 # =========================
-items_text = st.text_input(
-    "例：飯, 帰る, 飲む",
-    ""
-)
+items_text = st.text_input("例：飯, 帰る, 飲む")
 
 # =========================
 # ルーレット実行
@@ -33,9 +30,9 @@ if st.button("ルーレットを回す"):
     if items_text.strip() == "":
         st.warning("項目を入力してください")
     else:
-        items = [item.strip() for item in items_text.split(",") if item.strip()]
+        items = [i.strip() for i in items_text.split(",") if i.strip()]
 
-        if len(items) == 0:
+        if not items:
             st.warning("有効な項目がありません")
         else:
             result = random.choice(items)
@@ -62,4 +59,3 @@ if data.data:
         st.write(f"{row['created_at']}：{row['result']}")
 else:
     st.write("まだ履歴がありません")
-
