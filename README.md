@@ -1,19 +1,46 @@
-# 🎈 Blank app template
+# 🎯 Supabase × Streamlit ルーレットアプリ
 
-A simple Streamlit app template for you to modify!
+## 概要
+Supabase の PostgreSQL データベースと Streamlit を利用して作成した  
+**シンプルなルーレットアプリ**です。  
+ルーレットの結果を Supabase に保存し、アプリを再起動しても履歴が保持されます。
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+sqlite3 などのローカルデータベースは使用していません。
 
-### How to run it on your own machine
+---
 
-1. Install the requirements
+## 主な機能
+- カンマ区切りで入力した項目からランダムに1つ選択
+- ルーレット結果を Supabase に保存
+- 過去の結果を一覧表示（最新10件）
 
-   ```
-   $ pip install -r requirements.txt
-   ```
+---
 
-2. Run the app
+## 使用技術
+- Python
+- Streamlit
+- Supabase（PostgreSQL）
 
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+---
+
+## Supabase の設定
+
+### テーブル構成（`todos`）
+
+| column名 | type |
+|--------|------|
+| id | int8 (Primary Key, Auto Increment) |
+| result | text |
+| created_at | timestamp (default: now()) |
+
+- **RLS（Row Level Security）は OFF**
+- 課題・学習目的のため、認証なしで insert を許可
+
+---
+
+## 環境設定
+
+### requirements.txt
+```txt
+streamlit
+supabase
