@@ -38,7 +38,10 @@ sqlite3 などのローカルデータベースは使用していません。
 
 ---
 
-## 環境設定
+## URL
+
+このURLで試すことができます.
+https://blank-app-r066lmkf7vm.streamlit.app/
 
 ### requirements.txt
 ```txt
