@@ -6,7 +6,7 @@ import time
 # ページ設定
 # =====================
 st.set_page_config(
-    page_title="🎯 豪華ルーレットアプリ",
+    page_title="🎯 ぐるぐるルーレットアプリ",
     page_icon="🎯",
     layout="centered"
 )
@@ -41,7 +41,7 @@ body {
 # =====================
 # タイトル
 # =====================
-st.markdown("<h1 style='text-align: center;'>🎯 シンプル豪華ルーレット</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>🎯 シンプルぐるぐるルーレット</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center;'>迷ったら回せ。運命はルーレットが決める。</p>", unsafe_allow_html=True)
 
 # =====================
