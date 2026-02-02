@@ -43,7 +43,4 @@ sqlite3 などのローカルデータベースは使用していません。
 このURLで試すことができます.
 https://blank-app-r066lmkf7vm.streamlit.app/
 
-### requirements.txt
-```txt
-streamlit
-supabase
+
